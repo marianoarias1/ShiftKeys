@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* NAV */
+
+#nav{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 0.1rem solid #e6eaea;
+}
+
+#logo{
+    width: 3rem;
+}
+
+.cont_logo{
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contenedor_nombre{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.nombre{
+    width: 100%;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-left: 0.7rem;
+}
+
+.contenedor_lista{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contenedor_lista ul{
+    width: 30%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between ;
+    align-items: flex-end;
+}
+
+
+.lista_nav{
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+    color: #232625;
+    padding: 10px 0;
+}
+
+.lista_nav::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    height: 2px;
+    left: 0;
+    width: 100%;
+    background-color: #232625;
+    transform-origin: right top;
+    transform: scale(0,1);
+    transition: color 0.1s, transform 0.2s ease-out;
+}
+
+.lista_nav:hover::before,
+.lista_nav:focus::before{
+    transform-origin: left top;
+    transform: scale(1,1);
+}
+
+
+.cont_ul a{
+    text-decoration: none;
+    color: black;  /* esto lo tengo que cambiar */
+}
+
+/* Header */
+
+.header{
+    width: 100%;
+    display: flex;
+
+}
+
+.hijo_header{
+    width: 100%;
+}
+
+.hijo_header img{
+    width: 100%;
+    height: 26rem;
+    object-fit: cover;
+}
+
+.hijo_header h2{
+    position: absolute;
+    text-align: center;
+    line-height: 25rem; 
+    font-family: 'Oswald', sans-serif;
+    font-size: 8rem;
+    background-color: transparent;
+    color: white;
+    width: 100%; 
+}
+
+  
+
+/* Nosotros */
+
+.section_nosotros{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.card_nosotros{
+    width: 90%;
+    height: 30rem;
+    background-color: #EFF1F0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    -webkit-box-shadow: 1px 0px 24px 2px rgba(0,0,0,0.44); 
+    box-shadow: 1px 0px 24px 2px rgba(0,0,0,0.44);
+}
+
+.img_nosotros{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.img_nosotros img{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    position: absolute;
+    border-radius: 0 15px 15px 0;
+}
+
+.cont_nosotros{
+    width: 50%;
+    position: absolute;
+}
+
+#nosotros{  
+    display: flex;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    color: #232625;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 7rem;
+}
+
+.cont_p_nosotros{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.cont_p_nosotros p{
+    font-family: 'Oswald', sans-serif;
+    color: #232625;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-left: 4rem;
+}
+
+/* Teclados */
+
+.section_teclados{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.cont_teclados{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img_teclado{
+    width: 14rem;
+    border-radius: 15px 15px 0 0;
+}
+.nombre_teclados{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-top: solid 1px grey;
+}
+
+.teclados{
+    -webkit-box-shadow: 1px 0px 24px 2px rgba(0,0,0,0.44); 
+    box-shadow: 1px 0px 24px 2px rgba(0,0,0,0.44);
+    border-radius: 15px;
+    transition: all .3s;
+}
+
+.teclados:hover{
+transform: scale(1.12);
+}
+
+.a_teclados{
+    text-decoration: none;
+    color: #232625;
+    transition: all 2s;
+}
