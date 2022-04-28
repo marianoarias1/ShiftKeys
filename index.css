@@ -51,10 +51,10 @@
 }
 
 .contenedor_lista ul{
-    width: 30%;
+    width:40%;
     list-style: none;
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-around;
     align-items: flex-end;
 }
 
