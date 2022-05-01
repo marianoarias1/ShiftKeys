@@ -16,9 +16,9 @@ typewriter.typeString('ShiftKeys')
     .start();
 
 
+
+
 /* Slider */
-
-
 
 window.addEventListener("load", ()=>{
     let imagenes= [];
