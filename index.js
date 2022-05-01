@@ -1,7 +1,9 @@
-window.onload= function(){
+let funcionPantalla = function (){
     $(`#onload`).fadeOut();
     $(`body`).removeClass('hidden')
 }
+
+window.setInterval(funcionPantalla, 1600)
 
 /* Animacion maquina de escribir */
 
