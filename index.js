@@ -3,7 +3,7 @@ let funcionPantalla = function (){
     $(`body`).removeClass('hidden')
 }
 
-window.setInterval(funcionPantalla, 1600)
+window.setInterval(funcionPantalla, 2000)
 
 /* Animacion maquina de escribir */
 
