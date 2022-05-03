@@ -176,7 +176,7 @@
         width: 100%;
         max-height: 0;
         overflow: hidden;
-        transition: transform 1s;
+        transition: transform 0.3s;
     }
 
     .cont_ul{
@@ -225,9 +225,8 @@
         -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
         box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
         border-radius: 5px;
-        width: 15rem;
-        transform: translateX(9px);
-        
+        width: 20rem;
+        transform: translateX(45px);
     }
 
     .cont_ul.active{
