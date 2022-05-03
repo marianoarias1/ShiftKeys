@@ -1,3 +1,5 @@
+/* Pantalla de carga */
+
 let funcionPantalla = function (){
     $(`#onload`).fadeOut();
     $(`body`).removeClass('hidden')
@@ -6,9 +8,12 @@ let funcionPantalla = function (){
 window.setInterval(funcionPantalla, 2000)
 
 /* menu hamburguesa */
+
 const navHamburguesa= document.querySelector("#padre_hamburguesa");
 const listaHamburguesa= document.querySelector(".padre_ul");
 const ulHamburguesa= document.querySelector(".cont_ul")
+
+
 
 navHamburguesa.addEventListener("click",()=>{
     navHamburguesa.classList.toggle("active");
@@ -18,7 +23,49 @@ navHamburguesa.addEventListener("click",()=>{
     ulHamburguesa.classList.toggle("active");
 
     document.body.classList.toggle('opacity')
+
+
 });
+
+
+
+const listaNav1= document.querySelector("#lista_nav1")
+const listaNav2= document.querySelector("#lista_nav2")
+const listaNav3= document.querySelector("#lista_nav3")
+
+listaNav1.addEventListener("click",()=>{
+    navHamburguesa.classList.remove("active");
+
+    listaHamburguesa.classList.remove("active");
+
+    ulHamburguesa.classList.remove("active");
+
+    document.body.classList.remove('opacity')
+})
+
+listaNav2.addEventListener("click",()=>{
+    navHamburguesa.classList.remove("active");
+
+    listaHamburguesa.classList.remove("active");
+
+    ulHamburguesa.classList.remove("active");
+
+    document.body.classList.remove('opacity')
+})
+
+listaNav3.addEventListener("click",()=>{
+    navHamburguesa.classList.remove("active");
+
+    listaHamburguesa.classList.remove("active");
+
+    ulHamburguesa.classList.remove("active");
+
+    document.body.classList.remove('opacity')
+})
+
+
+
+
 
 
 /* Animacion maquina de escribir */
