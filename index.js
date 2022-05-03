@@ -5,18 +5,36 @@ let funcionPantalla = function (){
 
 window.setInterval(funcionPantalla, 2000)
 
+/* menu hamburguesa */
+const navHamburguesa= document.querySelector("#padre_hamburguesa");
+const listaHamburguesa= document.querySelector(".padre_ul");
+const ulHamburguesa= document.querySelector(".cont_ul")
+
+navHamburguesa.addEventListener("click",()=>{
+    navHamburguesa.classList.toggle("active");
+
+    listaHamburguesa.classList.toggle("active");
+
+    ulHamburguesa.classList.toggle("active");
+
+    document.body.classList.toggle('opacity')
+});
+
+
 /* Animacion maquina de escribir */
 
 let app = document.getElementById('titulo_nosotros');
 
 let typewriter = new Typewriter(app, {
     loop: false
+
 });
+
 
 typewriter.typeString('ShiftKeys')
     .pauseFor(2500)
     .start();
-
+    
 
 
 

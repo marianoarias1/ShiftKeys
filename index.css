@@ -83,7 +83,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 0.1rem solid #e6eaea;
 }
 
 #logo{
@@ -119,10 +118,16 @@
 }
 
 .contenedor_lista ul{
-    width:40%;
+    width:100%;
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.padre_ul{
+    width:50%;
+    display: flex;
     align-items: flex-end;
 }
 
@@ -132,7 +137,6 @@
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-
     transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
     color: #232625;
     padding: 10px 0;
@@ -163,6 +167,86 @@
     text-decoration: none;
     color: black;  /* esto lo tengo que cambiar */
 }
+
+/* menu hamburguesa******** */
+
+@media screen and (max-width:700px){
+
+    .padre_ul{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: transform 1s;
+    }
+
+    .cont_ul{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        
+    }
+    
+    #padre_haburguesa{
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    #padre_hamburguesa .linea{
+        display: block;
+        width: 35px;
+        height: 2px;
+        background-color: black;
+        margin-block: 8px;
+        border-radius: 4px;
+        transition: transform .5s, 
+        opacity .25s;
+    }
+
+    #padre_hamburguesa.active .linea:nth-child(1){
+        transform: translateY(10px) rotate(45deg);
+
+    }
+
+    #padre_hamburguesa.active .linea:nth-child(2){
+        opacity: 0;    
+    }
+
+    #padre_hamburguesa.active .linea:nth-child(3){
+        transform: translateY(-10px) rotate(-45deg);
+    
+    }
+
+    .padre_ul.active{
+        overflow: visible;
+        max-height: 100%;
+        height:90%;
+        position: absolute;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
+        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
+        border-radius: 5px;
+        width: 15rem;
+        transform: translateX(9px);
+        
+    }
+
+    .cont_ul.active{
+        display: flex;
+        width: 100%;
+        height: 90%;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+
+    .opacity{
+        background-color: rgba(0,0,0,0.5);
+        transition: all .5s ease;
+    }
+
+}
+
+
 
 /* Header */
 
