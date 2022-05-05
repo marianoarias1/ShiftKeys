@@ -32,6 +32,11 @@ navHamburguesa.addEventListener("click",()=>{
 const listaNav1= document.querySelector("#lista_nav1")
 const listaNav2= document.querySelector("#lista_nav2")
 const listaNav3= document.querySelector("#lista_nav3")
+const listaNav4= document.querySelector("#lista_nav4")
+const listaNav5= document.querySelector("#lista_nav5")
+
+const iconoPersona= document.querySelector('#icono_persona')
+const contLogReg= document.querySelector('.cont_log_reg')
 
 listaNav1.addEventListener("click",()=>{
     navHamburguesa.classList.remove("active");
@@ -63,8 +68,45 @@ listaNav3.addEventListener("click",()=>{
     document.body.classList.remove('opacity')
 })
 
+listaNav4.addEventListener("click",()=>{
+    navHamburguesa.classList.remove("active");
+
+    listaHamburguesa.classList.remove("active");
+
+    ulHamburguesa.classList.remove("active");
+
+    document.body.classList.remove('opacity')
+
+    iconoPersona.classList.remove('active2')
+
+    contLogReg.classList.remove('active2')
+
+})
+
+listaNav5.addEventListener("click",()=>{
+    navHamburguesa.classList.remove("active");
+
+    listaHamburguesa.classList.remove("active");
+
+    ulHamburguesa.classList.remove("active");
+
+    document.body.classList.remove('opacity')
+
+    iconoPersona.classList.remove('active2')
+
+    contLogReg.classList.remove('active2')
+
+})
 
 
+/* Icono personas */
+
+
+
+iconoPersona.addEventListener('click',()=>{
+    iconoPersona.classList.toggle('active2')
+    contLogReg.classList.toggle('active2')
+})
 
 
 
