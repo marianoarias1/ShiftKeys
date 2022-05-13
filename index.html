@@ -50,6 +50,18 @@
                         <i class="fa-solid fa-user"></i>
 
                     </div>
+
+                    <div class="a_nav" id="icono_cart">
+                        <a href="" class="a_icono">
+                           
+                            <i class="fa-solid fa-cart-shopping"></i>
+
+                            <div class="contador_carrito">
+                                <span >1</span>
+                            </div>
+                        </a>
+                        
+                    </div>
                 </ul>
 
             </div>
@@ -108,43 +120,9 @@
     <h2 class="h2_teclados" id="teclados__">TECLADOS</h2>
     <section class="section_teclados">
 
-        <div class="cont_teclados">
+        <div class="cont_teclados" id="cont_teclados">
 
-            <a href="" class="a_teclados">
-                <div class="teclados">
-                    <div class="imagen">
-                        <img src="./keyboards/TOFU60 DZ64 RGB.jpg" alt="" class="img_teclado">
-                    </div>
 
-                    <div class="nombre_teclados">
-                        <h4>TOFU60 RGB</h4>
-                    </div>
-                </div>
-            </a>
-
-            <a href="" class="a_teclados">
-                <div class="teclados">
-                    <div class="imagen">
-                        <img src="./keyboards/DZ65RGB HOT-SWAP WOODEN.jpg" alt="" class="img_teclado">
-                    </div>
-
-                    <div class="nombre_teclados">
-                        <h4>DZ65 RGB WOODEN</h4>
-                    </div>
-                </div>
-            </a>
-
-            <a href="" class="a_teclados">
-                <div class="teclados">
-                    <div class="imagen">
-                        <img src="./keyboards/TOFU65 HOT-SWAP.jpg" alt="" class="img_teclado">
-                    </div>
-
-                    <div class="nombre_teclados">
-                        <h4>TOFU65</h4>
-                    </div>
-                </div>
-            </a>
 
         </div>
     </section>
@@ -152,52 +130,50 @@
     <hr class="separador">
 
     <!-- Keycaps -->
+    
     <h2 class="h2_keycaps" id="keycaps__">KEYCAPS</h2>
     <section class="section_keycaps">
 
-        <div class="cont_keycaps">
+        <div class="cont_keycaps" id="cont_keycaps">
 
-            <a href="" class="a_keycaps">
-                <div class="keycaps">
-                    <div class="imagen">
-                        <img src="./Keycaps/KABUKI-CHO.jpg" alt="" class="img_keycaps">
-                    </div>
 
-                    <div class="nombre_keycaps">
-                        <h4>KABUKI-CHO</h4>
-                    </div>
-                </div>
-            </a>
-
-            <a href="" class="a_keycaps">
-                <div class="keycaps">
-                    <div class="imagen">
-                        <img src="./Keycaps/GMK SOPHIE.jpg" alt="" class="img_keycaps">
-                    </div>
-
-                    <div class="nombre_keycaps">
-                        <h4>GMK SOPHIE</h4>
-                    </div>
-                </div>
-            </a>
-
-            <a href="" class="a_keycaps">
-                <div class="keycaps">
-                    <div class="imagen">
-                        <img src="./Keycaps/GMK KITSUNE.jpg" alt="" class="img_keycaps">
-                    </div>
-
-                    <div class="nombre_keycaps">
-                        <h4>GMK KITSUNE</h4>
-                    </div>
-                </div>
-            </a>
         </div>
+    </section>
+
+
+    <hr class="separador">
+
+    <!-- carrito -->
+
+    <h2 class="h2_carrito" >TU CARRITO</h2>
+    <section class="section_cart">
+
+        <!-- <div class="nombre_precio">
+            <span>NOMBRE</span>
+            <span>PRECIO</span>
+        </div> -->
+
+        <div class="cont_carrito" id="cont_carrito">
+            <div class="nombre_precio">
+                <span></span>
+                <span>NOMBRE</span>
+                <span>CANTIDAD</span>
+                <span>PRECIO</span>
+            </div>
+
+            <div class="cart_items" id="cart_items">
+
+            </div>
+        </div>
+
     </section>
 
 
 
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="./animations.js"></script>
     <script defer src="./index.js"></script>
+    <script defer src="./DOM.js"></script>
+
 </body>
 </html>
