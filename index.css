@@ -739,15 +739,14 @@ transform: scale(1.12);
 }
 
 .nombre_precio{
-    width: 94%;
+    width: 60%;
     height: -10px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 .nombre_precio span{
-    text-align: left;
+    text-align:left;
     width: 100%;
 }
 
@@ -784,6 +783,7 @@ transform: scale(1.12);
 
 .cart_items span{
     width: 100%;
+
 }
 
 .total_compra{
@@ -799,4 +799,30 @@ transform: scale(1.12);
     font-size: 1.2rem;
     font-weight: 600;
 
+}
+
+.cont_botones_cart{
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.botones_carrito{
+    width: 40px;
+    height: 40px;
+    border: solid 1px #232625;
+    border-radius: 5px;
+    margin-right: 7px;
+    background-color: #F4F4F4;
+    color: #232625;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    box-shadow: 2px 2px 0px 0px #232625;
+    cursor: pointer;
+}
+
+.botones_carrito:active{
+    transform: translateX(2px) translateY(2px);
+    box-shadow: 0px 0px 0px 0px #232625;
 }

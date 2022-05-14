@@ -2,21 +2,22 @@
 /* JS PRODUCTS */
 
 class Database{
-    constructor(){
-        this.users=[]
-        this.products=[]
-    }
-
-    addProduct(...products){
+    constructor({ products = [], users = [] }) {
+        this.users = users;
+        this.products = products;
+      }
+    
+      addProduct(...products) {
         this.products.push(...products);
-    }
-
-    addUser(user){
+        localStorage.setItem('database', JSON.stringify(this));
+      }
+    
+      addUser(user) {
         this.users.push(user);
-    }
+        localStorage.setItem('database', JSON.stringify(this));
+      }
 }
 
-const database= new Database();
 
 class Cart{
     constructor({
@@ -35,7 +36,7 @@ class Cart{
         this.subtotal=subtotal;
     }
 
-    addProduct(ID, quantity){
+    addProduct(ID, quantity=1){
 
         const product= database.products.find((product)=>product.ID===ID)
 
@@ -63,9 +64,12 @@ class Cart{
                 this.products.push({ID, quantity})
 
             }
+
+            
+            localStorage.setItem('cart', JSON.stringify(this));
             renderizarCarrito(this);
             rederizarProductos(this);
-            
+            localStorage.setItem('database', JSON.stringify(database));
         }
         else{
 
@@ -92,8 +96,15 @@ class Cart{
         if(product.quantity>1){
             product.quantity--;
         }else{
-            this.products=this.products.filter((products)=>product!==ID)
+            this.products=this.products.filter((product)=>product !==ID)
         }
+
+        localStorage.setItem('cart', JSON.stringify(this));
+        localStorage.setItem('database', JSON.stringify(database)); 
+        rederizarProductos(this);
+        renderizarCarrito(this);
+
+
         
     }
 }
@@ -113,15 +124,6 @@ class Product{
     }
 
 
-       
-    // updateStock(operator, amount){
-       
-    //     const stock= eval(`${this.stock} ${operator} ${amount}`);
-
-    //     this.stock= stock >= this.stock ? stock : 0;
-
-    //     return this.stock;
-    // }
 
 
     update({price, stock, name= this.name,image=this.image}){
@@ -181,5 +183,13 @@ const GMK_KITSUNE= new Product({
 })
 
 
+const dbExistene=localStorage.getItem('database')
 
-database.addProduct(TOFU60_RGB, TOFU65, DZ65_WOODEN, KABUKI_CHO, GMK_SOPHIE, GMK_KITSUNE)
+const database= dbExistene ? new Database(JSON.parse(dbExistene)) : new Database({});
+
+
+if (!dbExistene){
+    database.addProduct(TOFU60_RGB, TOFU65, DZ65_WOODEN, KABUKI_CHO, GMK_SOPHIE, GMK_KITSUNE)
+}
+
+

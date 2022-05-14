@@ -35,6 +35,9 @@
                 <span>cantidad</span>
                 <span>precio</span>
 
+                <button class="botones_carrito">+</button>
+                <button class="botones_carrito">-</button>
+
             </div>
 */
 
@@ -86,8 +89,6 @@ const renderizarCarrito=(carrito)=>{
 
     carrito.products.forEach((product)=>{
 
-
-
         const DataBaseProduct= database.products.find((p)=>p.ID === product.ID);
 
         const contenedorProductos= document.createElement('div');
@@ -110,8 +111,28 @@ const renderizarCarrito=(carrito)=>{
         cantidadProductos.appendChild(textoCantidadProducto)
     
         const precioProductos= document.createElement('span');
-        const textoPrecioProducto= document.createTextNode(`$${DataBaseProduct.price}`)
+        const textoPrecioProducto= document.createTextNode(`$${DataBaseProduct.price * product.quantity}`)
         precioProductos.appendChild(textoPrecioProducto)
+
+
+        const contBotonesCart= document.createElement('div');
+        contBotonesCart.classList.add('cont_botones_cart');
+
+        const botonCarritoMas= document.createElement('button');
+        botonCarritoMas.classList.add('botones_carrito')
+        const textoBotonCarritoMas= document.createTextNode('+');
+        botonCarritoMas.appendChild(textoBotonCarritoMas);
+        botonCarritoMas.addEventListener('click', (e)=> carrito.addProduct(product.ID));
+
+
+        const botonCarritoMenos= document.createElement('button');
+        botonCarritoMenos.classList.add('botones_carrito');
+        const textoBotonCarritoMenos= document.createTextNode('-');
+        botonCarritoMenos.appendChild(textoBotonCarritoMenos);
+        botonCarritoMenos.addEventListener('click', (e)=>carrito.removeProduct(product.ID));
+
+        contBotonesCart.appendChild(botonCarritoMas);
+        contBotonesCart.appendChild(botonCarritoMenos);
 
 
         contenedorProductos.appendChild(contenedorIMG);
@@ -119,7 +140,9 @@ const renderizarCarrito=(carrito)=>{
         contenedorProductos.appendChild(cantidadProductos);
         contenedorProductos.appendChild(precioProductos);
 
-        cartContainer.appendChild(contenedorProductos)
+        contenedorProductos.appendChild(contBotonesCart)
+
+        cartContainer.appendChild(contenedorProductos);
 
     
 
