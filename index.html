@@ -52,12 +52,12 @@
                     </div>
 
                     <div class="a_nav" id="icono_cart">
-                        <a href="" class="a_icono">
+                        <a href="#total_compra" class="a_icono">
                            
                             <i class="fa-solid fa-cart-shopping"></i>
 
-                            <div class="contador_carrito">
-                                <span >1</span>
+                            <div class="contador_carrito" id="contador_carrito">
+                                <span id="contador_cart"></span>
                             </div>
                         </a>
                         
@@ -154,6 +154,7 @@
         </div> -->
 
         <div class="cont_carrito" id="cont_carrito">
+
             <div class="nombre_precio">
                 <span></span>
                 <span>NOMBRE</span>
@@ -162,7 +163,15 @@
             </div>
 
             <div class="cart_items" id="cart_items">
+                <div class="mensaje_carrito">
+                    <p>Tu carrito está vacío!</p>
+                </div>
 
+            </div>
+
+            <div class="total_compra" id="total_compra">
+                <span>TOTAL:</span>
+                <span id="span_subtotal"></span>
             </div>
         </div>
 

@@ -46,6 +46,12 @@ const productList2= document.getElementById("cont_keycaps");
  
 const cartContainer= document.getElementById('cart_items');
 
+const finalPrice= document.getElementById('span_subtotal')
+
+const contenedorContadorCart= document.getElementById('contador_carrito')
+
+const contadorCart= document.getElementById('contador_cart')
+
 //RENDER DE CARRITO
 
 const renderizarCarrito=(carrito)=>{
@@ -53,13 +59,34 @@ const renderizarCarrito=(carrito)=>{
     if(!carrito.products.length){
         return;
     }
+
+    if(carrito.products.length !==0){
+        contenedorContadorCart.classList.add('active_cart')
+
+
+    }
+
+    while(contadorCart.firstChild){
+        contadorCart.removeChild(contadorCart.firstChild);
+
+    }
+
+
     
     while(cartContainer.firstChild){
         cartContainer.removeChild(cartContainer.firstChild);
 
     }
 
+    while(finalPrice.firstChild){
+        finalPrice.removeChild(finalPrice.firstChild);
+
+    }
+
+
     carrito.products.forEach((product)=>{
+
+
 
         const DataBaseProduct= database.products.find((p)=>p.ID === product.ID);
 
@@ -85,8 +112,8 @@ const renderizarCarrito=(carrito)=>{
         const precioProductos= document.createElement('span');
         const textoPrecioProducto= document.createTextNode(`$${DataBaseProduct.price}`)
         precioProductos.appendChild(textoPrecioProducto)
-    
-    
+
+
         contenedorProductos.appendChild(contenedorIMG);
         contenedorProductos.appendChild(nombreProductos);
         contenedorProductos.appendChild(cantidadProductos);
@@ -94,7 +121,20 @@ const renderizarCarrito=(carrito)=>{
 
         cartContainer.appendChild(contenedorProductos)
 
+    
+
+
+
     })
+
+
+    const contadorCartText= document.createTextNode(carrito.products.length)
+    contadorCart.appendChild(contadorCartText)
+
+
+    const finalPriceText= document.createTextNode(`$${carrito.subtotal}`)
+
+    finalPrice.appendChild(finalPriceText)
 
 
 };
@@ -140,7 +180,7 @@ const rederizarProductos= (carrito)=>{
             name.appendChild(textName);
     
             const price= document.createElement('span');
-            const textPrice= document.createTextNode(product.price);
+            const textPrice= document.createTextNode(`$${product.price}`);
             price.appendChild(textPrice);
     
             const stock= document.createElement('span');
@@ -209,7 +249,7 @@ const rederizarProductos= (carrito)=>{
             name.appendChild(textName);
     
             const price= document.createElement('span');
-            const textPrice= document.createTextNode(product.price);
+            const textPrice= document.createTextNode(`$${product.price}`);
             price.appendChild(textPrice);
     
             const stock= document.createElement('span');
