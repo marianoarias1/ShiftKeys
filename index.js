@@ -81,9 +81,9 @@ class Cart{
 
     removeProduct(ID){
 
-        const product= this.products.find((product)=>product.ID===ID)
+        const product= this.products.find((p)=>p.ID===ID)
 
-        const productdb= database.products.find((product)=>(product.ID===ID))
+        const productdb= database.products.find((p)=>(p.ID===ID))
     
         
         if(!product){

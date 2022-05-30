@@ -265,105 +265,6 @@
     color: #232625;  /* esto lo tengo que cambiar */
 }
 
-/* menu hamburguesa******** */
-
-@media screen and (max-width:700px){
-
-    .padre_ul{
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: transform .3s;
-        transform: rotateY(90deg);
-    }
-
-    .cont_ul{
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        
-    }
-    
-    #padre_haburguesa{
-        background-color: transparent;
-        cursor: pointer;
-    }
-
-    #padre_hamburguesa .linea{
-        display: block;
-        width: 35px;
-        height: 2px;
-        background-color: black;
-        margin-block: 8px;
-        border-radius: 4px;
-        transition: transform .5s, 
-        opacity .25s;
-    }
-
-    #padre_hamburguesa.active .linea:nth-child(1){
-        transform: translateY(10px) rotate(45deg);
-
-    }
-
-    #padre_hamburguesa.active .linea:nth-child(2){
-        opacity: 0;    
-    }
-
-    #padre_hamburguesa.active .linea:nth-child(3){
-        transform: translateY(-10px) rotate(-45deg);
-    
-    }
-
-
-    .padre_ul.active{
-        overflow: visible;
-        max-height: 100%;
-        height:90%;
-        position: absolute;
-        background-color: white;
-        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
-        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
-        border-radius: 5px;
-        width: 15rem;
-        transform: rotateY(0deg);
-        margin: 0px;
-        padding: 0px;
-        
-    }
-
-    .cont_ul.active{
-        display: flex;
-        width: 100%;
-        height: 90%;
-        justify-content: space-evenly;
-        align-items: center;
-        
-    }
-
-    .opacity{
-        background-color: rgba(0,0,0,0.5);
-        transition: all .5s ease;
-    }
-
-    
-    .cont_log_reg{
-        visibility: hidden;
-        position: absolute;
-        max-height: 100%;
-        height: 9rem;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-around;
-        align-items: center;
-        background-color: white;
-        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
-        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
-        border-radius: 5px;
-        width: 8.8rem;
-        margin-top:0;
-        padding: 50px 50px;
-    }
-}
 
 
 
@@ -825,4 +726,481 @@ transform: scale(1.12);
 .botones_carrito:active{
     transform: translateX(2px) translateY(2px);
     box-shadow: 0px 0px 0px 0px #232625;
+}
+
+/* RESPONSIVE */
+
+
+
+
+@media screen and (max-width:1280px){
+
+    
+    #logo{
+        width: 3.8rem;
+    }
+
+    .nombre{
+        width: 100%;
+        font-family: 'Athiti', sans-serif;
+        font-weight: 500;
+        font-size: 1.7rem;
+        margin-left: 0.7rem;
+    }
+
+    .contenedor_lista ul{
+        width:100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 8px 0px;
+        margin-right: 5px;
+    }
+
+    .lista_nav{
+        position: relative;
+        font-family: 'Raleway', sans-serif;
+        /* font-weight: 400; */
+        letter-spacing: 0px;
+        font-size: 1.2rem;
+        transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+        color: #232625;
+    }
+
+    .add_cart{
+        font-size: 1.3rem;
+    }
+
+    .nombre_teclados{
+        font-size: 1.4rem;
+    }
+
+    .cont_carrito span{
+        font-family: 'Athiti', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    .total_compra span{
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+    
+    }
+
+    .cont_carrito span{
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor_productos span{
+        display: flex;
+        justify-content: center;
+
+    }
+
+
+}
+
+
+@media screen and (max-width:899px){
+
+    #logo{
+        width: 4.5rem;
+    }
+
+    .nombre{
+        width: 100%;
+        font-family: 'Athiti', sans-serif;
+        font-weight: 500;
+        font-size: 1.8rem;
+        margin-left: 0.7rem;
+    }
+
+    .padre_ul{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: transform .3s;
+        transform: rotateY(90deg);
+    }
+
+    .cont_ul{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        
+    }
+
+    .contenedor_padre_ham{
+        display: flex;
+        align-items: center;
+    }
+    
+    #padre_haburguesa{
+        background-color: transparent;
+        cursor: pointer;
+
+    }
+
+    #padre_hamburguesa .linea{
+        display: block;
+        width: 35px;
+        height: 2px;
+        background-color: black;
+        margin-block: 8px;
+        border-radius: 4px;
+        transition: transform .5s, 
+        opacity .25s;
+        margin-right: 10px;
+
+    }
+
+    #padre_hamburguesa.active .linea:nth-child(1){
+        transform: translateY(10px) rotate(45deg);
+
+    }
+
+    #padre_hamburguesa.active .linea:nth-child(2){
+        opacity: 0;    
+    }
+
+    #padre_hamburguesa.active .linea:nth-child(3){
+        transform: translateY(-10px) rotate(-45deg);
+    
+    }
+
+
+    .padre_ul.active{
+        overflow: visible;
+        max-height: 50%;
+        height:50%;
+        position: absolute;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
+        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
+        border-radius: 5px;
+        width: 15rem;
+        transform: rotateY(0deg);
+        margin: 0px;
+        padding: 0px;
+        
+    }
+
+    .cont_ul.active{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+
+    .opacity{
+        background-color: rgba(0,0,0,0.5);
+        transition: all .5s ease;
+    }
+
+    
+    .cont_log_reg{
+        visibility: hidden;
+        position: absolute;
+        max-height: 100%;
+        height: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
+        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
+        border-radius: 5px;
+        width: 8.8rem;
+        margin-top:0;
+        padding: 50px 50px;
+    }
+
+    .lista_nav{
+        position: relative;
+        font-family: 'Raleway', sans-serif;
+        /* font-weight: 400; */
+        letter-spacing: 0px;
+        font-size: 1.5rem;
+        transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+        color: #232625;
+        padding: 10px 0;
+    }
+
+    .img_nosotros{
+        display: none;
+    }
+
+    .card_nosotros{
+        width: 90%;
+        height: 20rem;
+        background-color: #EFF1F0;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 15px;
+        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
+        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
+    }
+
+    .cont_nosotros{
+        width: 100%;
+        position: absolute;
+    }
+    
+    
+    #titulo_nosotros{  
+        display: flex;
+        justify-content: center;
+        font-family: 'Oswald', sans-serif;
+        color: #232625;
+        font-size: 1.7rem;
+        font-weight: 300;
+        line-height: 7rem;
+    }
+    
+    .cont_p_nosotros{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cont_p_nosotros p{
+        font-family: 'Oswald', sans-serif;
+        color: #232625;
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin-left: 0rem;
+        letter-spacing: 0.5px;
+    }
+
+    .add_cart{
+        font-size: 1.5rem;
+    }
+
+    .nombre_teclados{
+        font-size: 1.5rem;
+    }
+
+    .cont_carrito span{
+        font-family: 'Athiti', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor_productos span{
+        display: flex;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    .total_compra span{
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+    
+    }
+
+    .a_nav i{
+        font-size:1.8rem;
+    }
+
+    .a_icono{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .contador_carrito{
+        width: 20px;
+        height: 20px;
+        background-color: #E9472D;
+        border-radius: 50%;
+        position: absolute;
+        margin-left: 3px;
+        display: flex;
+        justify-content: center;
+        visibility: hidden; 
+
+    }
+    
+    
+    .contador_carrito span{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-family: 'Athiti', sans-serif;
+        font-weight: 900;
+        color: #F4F4F4;
+        font-size: 16px;
+    
+    }
+    
+
+}
+
+
+@media screen and (max-width:400px){
+
+    .nombre{
+        display: none;
+    }
+
+    .hijo_header img{
+        width: 100%;
+        height: 18rem;
+        object-fit: cover;
+    }
+
+
+    .padre_ul.active{
+        overflow: visible;
+        max-height:60%;
+        height:60%;
+        position: absolute;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45); 
+        box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.45);
+        border-radius: 5px;
+        width: 15rem;
+        transform: rotateY(0deg);
+        margin: 0px;
+        padding: 0px;
+        
+    }
+
+    
+    .cont_ul.active{
+        display: flex;
+        width: 100%;
+        height: 90%;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+
+    .a_nav i{
+        font-size:1.5rem;
+    }
+
+    .lista_nav{
+        position: relative;
+        font-family: 'Raleway', sans-serif;
+        /* font-weight: 400; */
+        letter-spacing: 0px;
+        font-size: 1.3rem;
+        transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+        color: #232625;
+        padding: 10px 0;
+    }
+
+    .contador_carrito{
+        width: 16px;
+        height: 16px;
+        background-color: #E9472D;
+        border-radius: 50%;
+        position: absolute;
+        margin-left: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        visibility: hidden; 
+    }
+    
+    
+    .contador_carrito span{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-family: 'Athiti', sans-serif;
+        font-weight: 900;
+        color: #F4F4F4;
+        font-size: 14px;
+    
+    }
+
+    .section_nosotros{
+        display: none;
+    }
+
+    .add_cart{
+        margin-top: 1.6rem;
+        margin-bottom: 3rem;
+    }
+
+
+    .cont_carrito{
+        width: 100%;
+    }
+
+
+    .nombre_precio{
+        width: 100%;
+    }
+    
+    
+    .cart_items{
+        width: 100%;
+        height: 90%;
+        background-color: #F4F4F4;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap:wrap;
+    }
+    
+    .contenedor_productos{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .img_product{
+        display: none;
+    }
+    
+    
+    
+    .cart_items span{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cont_botones_cart{
+        width: auto;
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .botones_carrito{
+        width: 40px;
+        height: 40px;
+        border: solid 1px #232625;
+        border-radius: 5px;
+        margin-right: 5px;
+        background-color: #F4F4F4;
+        color: #232625;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        box-shadow: 2px 2px 0px 0px #232625;
+        cursor: pointer;
+
+    }
+
 }
