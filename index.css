@@ -1052,7 +1052,7 @@ transform: scale(1.12);
 }
 
 
-@media screen and (max-width:400px){
+@media screen and (max-width:480px){
 
     .nombre{
         display: none;
