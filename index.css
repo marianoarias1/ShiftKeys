@@ -588,7 +588,7 @@ transform: scale(1.12);
 }
 
 .arrow{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -1228,6 +1228,10 @@ transform: scale(1.12);
         box-shadow: 2px 2px 0px 0px #232625;
         cursor: pointer;
 
+    }
+
+    .arrow{
+        display: flex;
     }
 
     .cont_teclados{
