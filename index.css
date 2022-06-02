@@ -1079,7 +1079,7 @@ transform: scale(1.12);
 }
 
 
-@media screen and (max-width:480px){
+@media screen and (max-width:480px) and (min-width:320px){
 
     .nombre{
         display: none;
@@ -1239,6 +1239,10 @@ transform: scale(1.12);
         overflow-x: scroll;
     }
 
+    .cont_teclados::-webkit-scrollbar {
+        display: none;
+       }
+
     .teclados{
         margin: 80px;
     }
@@ -1250,7 +1254,12 @@ transform: scale(1.12);
         flex-wrap: nowrap;
         flex-direction: row;
         overflow-x: scroll;
+        -webkit-scrollbar:none;
     }
+
+    .cont_keycaps::-webkit-scrollbar {
+        display: none;
+       }
     .keycaps{
         margin: 80px;
     }
