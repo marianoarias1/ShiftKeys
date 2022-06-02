@@ -587,6 +587,33 @@ transform: scale(1.12);
     border-color: solid 1px #232625;
 }
 
+.arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-arrow-right{
+    font-size: 2rem;
+    color: #232625;
+    animation-name: animacionFlecha;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animacionFlecha {
+    0%{
+        transform: translateX(20px);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(20px);
+    }
+}
+
+
 /* carrito */
 
 .h2_carrito{
@@ -1206,10 +1233,14 @@ transform: scale(1.12);
     .cont_teclados{
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        overflow: hidden;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
+    }
+
+    .teclados{
+        margin: 80px;
     }
 
     .cont_keycaps{
@@ -1221,6 +1252,6 @@ transform: scale(1.12);
         overflow-x: scroll;
     }
     .keycaps{
-        margin: 100px;
+        margin: 80px;
     }
 }
