@@ -150,3 +150,6 @@ window.addEventListener("load", ()=>{
 
     setInterval(cambiarImagenes,2000)
 })
+
+
+
