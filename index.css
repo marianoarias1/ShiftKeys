@@ -1237,7 +1237,8 @@ transform: scale(1.12);
     .cont_teclados{
         width: 100%;
         display: flex;
-        justify-content: flex-start;
+        justify-content:flex-start;
+        align-items: center;
         flex-wrap: nowrap;
         flex-direction: row;
         overflow-x: scroll;
@@ -1245,7 +1246,8 @@ transform: scale(1.12);
 
     .cont_teclados::-webkit-scrollbar {
         display: none;
-       }
+    }
+
 
     .teclados{
         margin: 80px;
@@ -1255,6 +1257,7 @@ transform: scale(1.12);
         width: 100%;
         display: flex;
         justify-content: flex-start;
+        align-items: center;
         flex-wrap: nowrap;
         flex-direction: row;
         overflow-x: scroll;
