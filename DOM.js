@@ -110,9 +110,6 @@ const renderizarCarrito=(carrito)=>{
         const textoCantidadProducto= document.createTextNode(product.quantity)
         cantidadProductos.appendChild(textoCantidadProducto)
     
-        const precioProductos= document.createElement('span');
-        const textoPrecioProducto= document.createTextNode(`$${DataBaseProduct.price * product.quantity}`)
-        precioProductos.appendChild(textoPrecioProducto)
 
 
         const contBotonesCart= document.createElement('div');
@@ -129,7 +126,25 @@ const renderizarCarrito=(carrito)=>{
         botonCarritoMenos.classList.add('botones_carrito');
         const textoBotonCarritoMenos= document.createTextNode('-');
         botonCarritoMenos.appendChild(textoBotonCarritoMenos);
-        botonCarritoMenos.addEventListener('click', (e)=>carrito.removeProduct(product.ID));
+        botonCarritoMenos.addEventListener('click', (e)=> {
+            if(product.quantity>=0){
+                carrito.removeProduct(product.ID);
+                contenedorProductos.innerHTML=''
+            }
+
+            if(!product.quantity){
+                botonCarritoMenos.setAttribute('disabled', true)
+                botonCarritoMenos.classList.toggle('botones_carrito_disble')
+            }
+
+            console.log(carrito.products, 'caaaa')
+            if(carrito.products.length==0){
+                finalPrice.innerHTML=carrito.subtotal
+            } 
+            
+
+        });
+
 
         contBotonesCart.appendChild(botonCarritoMas);
         contBotonesCart.appendChild(botonCarritoMenos);
@@ -138,16 +153,11 @@ const renderizarCarrito=(carrito)=>{
         contenedorProductos.appendChild(contenedorIMG);
         contenedorProductos.appendChild(nombreProductos);
         contenedorProductos.appendChild(cantidadProductos);
-        contenedorProductos.appendChild(precioProductos);
+
 
         contenedorProductos.appendChild(contBotonesCart)
 
         cartContainer.appendChild(contenedorProductos);
-
-    
-
-
-
     })
 
 
@@ -157,7 +167,9 @@ const renderizarCarrito=(carrito)=>{
 
     const finalPriceText= document.createTextNode(`$${carrito.subtotal}`)
 
-    finalPrice.appendChild(finalPriceText)
+    if(carrito.subtotal>0){
+        finalPrice.appendChild(finalPriceText)
+    }
 
 
 };
@@ -222,11 +234,6 @@ const rederizarProductos= (carrito)=>{
             
             button.appendChild(textButton);
             divBoton.appendChild(button);
-            
-            
-    
-    
-            
     
             button.addEventListener('click',(e)=>{
                 carrito.addProduct(product.ID,1)
@@ -243,6 +250,28 @@ const rederizarProductos= (carrito)=>{
     
             productList.appendChild(A);
 
+
+            const searchBar= document.getElementById('search_bar');
+            const btnSearch= document.getElementById('btn-search');
+            const h2Teclados= document.getElementById('teclados__')
+            const iconoRecargar= document.getElementById('recargar')
+            btnSearch.addEventListener('click',(e)=>{
+                let valorInput= searchBar.value.toLowerCase();
+                if(valorInput==='keycaps' || valorInput==='keycap'){
+                    productList.removeChild(A)
+                    h2Teclados.classList.remove('h2_teclados')
+                    h2Teclados.classList.toggle('h2_teclados_off')
+                    iconoRecargar.classList.add('fa-arrows-rotate-active')
+                }
+            })
+
+            iconoRecargar.addEventListener('click', (e)=>{
+                productList.appendChild(A)
+                h2Teclados.classList.add('h2_teclados')
+                h2Teclados.classList.remove('h2_teclados_off')
+                iconoRecargar.classList.remove('fa-arrows-rotate-active')
+                searchBar.value=''
+            })
         }
         else{
             const A= document.createElement('a');
@@ -313,6 +342,30 @@ const rederizarProductos= (carrito)=>{
             A.appendChild(divBoton)
     
             productList2.appendChild(A);
+
+            const searchBar= document.getElementById('search_bar');
+            const btnSearch= document.getElementById('btn-search');
+            const h2Keycaps= document.getElementById('keycaps__')
+            const iconoRecargar= document.getElementById('recargar')
+            btnSearch.addEventListener('click',(e)=>{
+                let valorInput= searchBar.value.toLowerCase();
+                if(valorInput==='teclados' || valorInput==='teclado'){
+                    productList2.removeChild(A)
+                    h2Keycaps.classList.remove('h2_keycaps')
+                    h2Keycaps.classList.toggle('h2_keycaps_off')
+                    iconoRecargar.classList.add('fa-arrows-rotate-active')
+                }
+            })
+
+
+
+            iconoRecargar.addEventListener('click', (e)=>{
+                productList2.appendChild(A)
+                h2Keycaps.classList.add('h2_keycaps')
+                h2Keycaps.classList.remove('h2_keycaps_off')
+                iconoRecargar.classList.remove('fa-arrows-rotate-active')
+                searchBar.value=''
+            })
         }
 
             
@@ -334,4 +387,8 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     rederizarProductos(carrito);
 
 })
+
+
+
+
 

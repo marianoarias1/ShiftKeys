@@ -111,6 +111,42 @@
     margin-left: 0.7rem;
 }
 
+.cont_search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    flex-direction: column;
+}
+
+.hijos_search{
+    padding: 5px 0px;
+}
+
+
+.cont_search input{
+    border: solid 1px #232625;
+    width: 20rem;
+    height: 2.4rem;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Athiti', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cont_search button{
+    width: 15rem;
+    height: 2rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #232625;
+    color: #F4F4F4;
+    font-size: 1rem;
+    font-family:'Athiti', sans-serif;
+}
+
 .contenedor_lista{
     width: 50%;
     display: flex;
@@ -297,6 +333,23 @@
     width: 100%; 
 }
 
+
+/* searBar Icon */
+.fa-arrows-rotate{
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 1s;
+    visibility: hidden;
+}
+
+.fa-arrows-rotate-active{
+    visibility: visible;
+}
+
+.fa-arrows-rotate:hover{
+    transform: rotateZ(180deg);
+}
   
 
 /* Nosotros */
@@ -385,6 +438,10 @@
     font-family: 'Raleway', sans-serif;
     margin-top: 7rem;
     letter-spacing: 3px;
+}
+
+.h2_teclados_off{
+    display: none;
 }
 .section_teclados{
     width: 100%;
@@ -515,6 +572,10 @@ transform: scale(1.12);
     font-family: 'Raleway', sans-serif;
     margin-top: 7rem;
     letter-spacing: 3px;
+}
+
+.h2_keycaps_off{
+    display: none;
 }
 
 .section_keycaps{
@@ -753,6 +814,14 @@ transform: scale(1.12);
 .botones_carrito:active{
     transform: translateX(2px) translateY(2px);
     box-shadow: 0px 0px 0px 0px #232625;
+}
+
+.botones_carrito_disble{
+    border: solid 1px #EFF1F0;
+    background-color: #ADB2AF;
+    color: #232625;
+    box-shadow: 0px #232625;
+    cursor: not-allowed;
 }
 
 /* RESPONSIVE */

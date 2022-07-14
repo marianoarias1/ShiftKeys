@@ -59,9 +59,11 @@ class Cart{
 
             if(productInCart){
                 productInCart.quantity+=quantity;
+                console.log(this.products)
             }else{
 
                 this.products.push({ID, quantity})
+                console.log(productInCart)
 
             }
 
@@ -96,8 +98,10 @@ class Cart{
         if(product.quantity>1){
             product.quantity--;
         }else{
-            this.products=this.products.filter((product)=>product !==ID)
+            this.products=this.products.filter((product)=>product.ID !==ID)
         }
+
+        console.log(product.quantity)
 
         localStorage.setItem('cart', JSON.stringify(this));
         localStorage.setItem('database', JSON.stringify(database)); 
